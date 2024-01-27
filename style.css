@@ -1,105 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-
-:root {
-	--fore: #1f1f1f;
-	--text-color: #f7f7f7;
-	--title-light: #009f15;
-	--title-dark: #00670e;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	background-color: var(--fore);
-	border: 0;
-}
-
-.navbar li, .navbar a {
-	font-family: "Ubuntu Mono", sans-serif;
-	font-weight: 400;
-	font-size: 32px;
-	color: var(--title-light);
-	background-color: var(--fore);
-	text-decoration: none;
-}
-
-.navbar {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 30px 10%;
-	background-color: var(--fore);
-}
-
-.navlinks li {
-	display: inline-block;
-	padding: 0px 20px;
-}
-
-.navlinks li a:hover {
-	color: var(--title-dark);
-}
-
-.navbar * {
-	background-color: var(--back);
-}
-
-.main {
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-img {
-	object-fit: cover;
-	width: 200px;
-	height: 200px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-p, ul {
-	font-family: "Ubuntu Mono", sans-serif;
-	font-weight: 400;
-	font-size: 22px;
-	color: var(--text-color);
-}
-
-ul {
+.main ul {
 	line-height: 2em;
 	margin-left: 20px;
 }
 
-h1, h2, .project-title {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	font-family: "Ubuntu Mono", sans-serif;
-	font-weight: 400;
-	font-size: 32px;
-	color: var(--title-light);
+body {
+	height: 100vh;
 }
 
-h2 {
-	font-size: 32px;
-}
-
-a {
-	text-decoration: none;
-	color: rgb(112, 112, 255);
-}
-
-.project-description {
-	margin-bottom: 100px;
-}
-
-.note {
-	margin-top: 50px;
-	text-align: center;
-	font-size: 18px;
-	margin-bottom: 100px;
-}
-
-.project-title:hover {
-	color: var(--title-dark);
+.main {
+	height: 90%;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 180px;
 }
