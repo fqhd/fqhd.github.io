@@ -4,82 +4,38 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Projects</title>
-	<link rel="stylesheet" href="/base.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<nav class="navbar">
 		<ul class="navlinks">
-			<li><a href="/">Home</a></li><li><a href="/projects">Projects</a></li><li><a href="/research">Research</a></li><li><a href="/contributions">Contributions</a></li><li><a href="/youtube">Youtube</a></li>
+			<li><a href="/">/Home</a></li><li><a href="/projects">/Projects</a></li><li><a href="/research">/Research</a></li><li><a href="/contributions">/Contributions</a></li><li><a href="/youtube">/Youtube</a></li>
 		</ul>
 	</nav>
-	<section class="project-listing">
-		<div class="project-pane">
-			<a href="https://fqhd.github.io/ProceduralPlanets" target="_blank"><img class="thumbnail" src="/images/planet.jpg" alt=""></a>
-			<div class="project-description">
-				<h1 class="project-title">Procedural Planets</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio nisi, aliquam quis porttitor nec, sollicitudin a urna. Ut fringilla, enim in feugiat malesuada, dui ex aliquet ante, posuere tempus diam purus non augue. Suspendisse facilisis varius nisi, sed convallis ante molestie eu. Integer sit amet tellus nec tellus pulvinar viverra.
-				</p>
-				<p>WebGL, Javascript, HTML/CSS</p>
-				<a href="https://github.com/fqhd/ProceduralPlanets" target="_blank">GITHUB</a>
-			</div>
-		</div>
-		<div class="project-pane">
-			<img class="thumbnail" src="/images/flowers.png" alt="">
-			<div class="project-description">
-				<h1 class="project-title">Super Resolution GAN</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio nisi, aliquam quis porttitor nec, sollicitudin a urna. Ut fringilla, enim in feugiat malesuada, dui ex aliquet ante, posuere tempus diam purus non augue. Suspendisse facilisis varius nisi, sed convallis ante molestie eu. Integer sit amet tellus nec tellus pulvinar viverra.
-				</p>
-				<p>Python, Pytorch</p>
-				<a href="https://github.com/fqhd/SRGAN" target="_blank">GITHUB</a>
-			</div>
-		</div>
-		<div class="project-pane">
-			<img class="thumbnail" src="/images/denoise.png" alt="">
-			<div class="project-description">
-				<h1 class="project-title">AI Denoise</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio nisi, aliquam quis porttitor nec, sollicitudin a urna. Ut fringilla, enim in feugiat malesuada, dui ex aliquet ante, posuere tempus diam purus non augue. Suspendisse facilisis varius nisi, sed convallis ante molestie eu. Integer sit amet tellus nec tellus pulvinar viverra.
-				</p>
-				<p>Python, Pytorch</p>
-				<a href="https://github.com/fqhd/Denoiser" target="_blank">GITHUB</a>
-			</div>
-		</div>
-		<div class="project-pane">
-			<img class="thumbnail" src="/images/deepdream.png" alt="">
-			<div class="project-description">
-				<h1 class="project-title">Deep Dream</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio nisi, aliquam quis porttitor nec, sollicitudin a urna. Ut fringilla, enim in feugiat malesuada, dui ex aliquet ante, posuere tempus diam purus non augue. Suspendisse facilisis varius nisi, sed convallis ante molestie eu. Integer sit amet tellus nec tellus pulvinar viverra.
-				</p>
-				<p>Python, Pytorch</p>
-				<a href="https://github.com/fqhd/small-ai-projects" target="_blank">GITHUB</a>
-			</div>
-		</div>
-		<div class="project-pane">
-			<img class="thumbnail" src="/images/meadow.png" alt="">
-			<div class="project-description">
-				<h1 class="project-title">Meadow</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio nisi, aliquam quis porttitor nec, sollicitudin a urna. Ut fringilla, enim in feugiat malesuada, dui ex aliquet ante, posuere tempus diam purus non augue. Suspendisse facilisis varius nisi, sed convallis ante molestie eu. Integer sit amet tellus nec tellus pulvinar viverra.
-				</p>
-				<p>C++, OpenGL, GLM, GLFW</p>
-				<a href="https://github.com/fqhd/Meadow" target="_blank">GITHUB</a>
-			</div>
-		</div>
-		<div class="project-pane">
-			<img class="thumbnail" src="/images/thetowers.png" alt="">
-			<div class="project-description">
-				<h1 class="project-title">The Towers</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio nisi, aliquam quis porttitor nec, sollicitudin a urna. Ut fringilla, enim in feugiat malesuada, dui ex aliquet ante, posuere tempus diam purus non augue. Suspendisse facilisis varius nisi, sed convallis ante molestie eu. Integer sit amet tellus nec tellus pulvinar viverra.
-				</p>
-				<p>C++, OpenGL, GLM, SFML, STB</p>
-				<a href="https://github.com/fqhd/TheTowers" target="_blank">GITHUB</a>
-			</div>
-		</div>
+	<section class="main">
+		<p class="note">
+			Note: clicking on the title opens the github repo, clicking on the image takes you to the webapp(if one is available).
+		</p>
+
+		<a class="project-title" href="https://www.github.com/fqhd/ProceduralPlanets" target="_blank">Procedural Planets</a><br>
+		<a href="https://fqhd.github.io/ProceduralPlanets" target="_blank"><img class="thumbnail" src="/images/planet.jpg" alt=""></a>
+		<p class="project-description">
+			WebApp to showcase procedural generation of planets in real time, accelerated by the GPU. Press space to generate new variations of the current planet.
+			<br>
+			<br>
+			Technologies: WebGL, Javascript, HTML/CSS
+		</p>
+
+		<a class="project-title" href="https://www.github.com/fqhd/SRGAN" target="_blank">Super Resolution GAN</a><br>
+		<img class="thumbnail" src="/images/flowers.png" alt="">
+		<p>
+			A modified version of the original SRGAN paper by Christian Ledig(<a target="_blank" href="https://arxiv.org/pdf/1609.04802.pdf">https://arxiv.org/pdf/1609.04802.pdf</a>). I changed the loss function to allow it to reach the theoretical limit of 0(impossible in the original paper).
+			<br>
+			<br>
+			Technologies: WebGL, Javascript, HTML/CSS
+		</p>
+
+		
 		
 	</section>
 </body>
