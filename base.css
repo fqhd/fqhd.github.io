@@ -1,18 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+:root {
+	--fore: #1f1f1f;
+}
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	background-color: #24252A;
+	background-color: var(--fore);
 	border: 0;
 }
 
 .navbar li, .navbar a {
-	font-family: "Roboto", sans-serif;
+	font-family: "Ubuntu Mono", sans-serif;
 	font-weight: 400;
-	font-size: 24px;
-	color: #edf0f1;
+	font-size: 32px;
+	color: white;
+	background-color: var(--fore);
+	text-decoration: none;
 }
 
 .navbar {
@@ -20,10 +26,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 30px 10%;
-	background-color: #14151A;
-	border-bottom: 2px;
-	border-color: #fff;
-	border-style: solid;
+	background-color: var(--fore);
 }
 
 .navlinks li {
@@ -36,16 +39,36 @@
 }
 
 .navbar * {
-	background-color: #14151A;
+	background-color: var(--back);
+}
+
+.main {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 img {
 	object-fit: cover;
 }
 
-p {
-	font-family: "Roboto", sans-serif;
+p, ul {
+	font-family: "Ubuntu Mono", sans-serif;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 22px;
+	color: #edf0f1;
+}
+
+ul {
+	line-height: 2em;
+	margin-left: 20px;
+}
+
+h1, h2 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: "Ubuntu Mono", sans-serif;
+	font-weight: 400;
+	font-size: 48px;
 	color: #edf0f1;
 }
