@@ -1,0 +1,11 @@
+.contribution-listing {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.contribution a {
+	font-family: "Ubuntu Mono", "sans-serif";
+	color: var(--link);
+	font-size: 18px;
+}
