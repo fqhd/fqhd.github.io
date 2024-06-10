@@ -1,0 +1,35 @@
+.main-title {
+    font-size: 42px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	color: #edf0f1;
+}
+
+h2 {
+    font-size: 32px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	color: #edf0f1;
+}
+
+.main-section {
+    background-color: #44454A;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 10px;
+	border-width: 5px;
+    border-color: #44454A;
+    border-style: solid;
+	box-shadow: 0px 0px 20px black;
+    padding: 15px;
+}
+
+.main-section * {
+    background-color: #44454A;
+}
+
+.main-title {
+    text-align: center;
+}

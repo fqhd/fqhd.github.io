@@ -47,7 +47,20 @@
 	background-color: #14151A;
 }
 
-.project-description a {
+.project-description h1 {
+	background-color: #14151A;
+}
+
+.project-title {
+	font-size: 24px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	color: #edf0f1;
+	background-color: #14151A;
+	text-decoration: none;
+}
+
+.github-button {
 	background-color: #edf0f1;
 	text-decoration: none;
 	color: #14151A;
@@ -55,14 +68,3 @@
 	font-family: monospace;
 }
 
-.project-description a img {
-	height: 1em;
-	background-color: #edf0f1;
-}
-
-.project-pane h1 {
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	color: #edf0f1;
-	background-color: #14151A;
-}
