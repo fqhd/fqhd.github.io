@@ -1,52 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procedural Planets</title>
     <link rel="stylesheet" href="/base.css">
-	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
 </head>
+
 <body>
     <nav class="navbar">
-		<ul class="navlinks">
-			<li><a href="/">Home</a></li><li><a href="/projects">Projects</a></li><li><a href="/research">Research</a></li><li><a href="/contributions">Contributions</a></li><li><a href="/youtube">Youtube</a></li>
-		</ul>
-	</nav>
+        <ul class="navlinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/research">Research</a></li>
+            <li><a href="/contributions">Contributions</a></li>
+            <li><a href="/youtube">Youtube</a></li>
+        </ul>
+    </nav>
     <section class="main-section">
         <h1 class="main-title">Procedural Planets</h1><br><br>
 
         <h2>Overview</h2><br>
         <p>
-            Procedurally generation is no easy task, you can find dozens of web projects and experiments online of people trying to perfect this feat in a way that makes the results visually pleasing. Arguably the biggest breakthrough in procedural generation is the famous perlin noise algorithm invented by Ken Perlin in 1983. Since then, members of the open source creative coding community have developed their own noise functions.
+            Procedurally generation is no easy task, you can find dozens of web projects and experiments online of
+            people trying to perfect this feat in a way that makes the results visually pleasing. Arguably the biggest
+            breakthrough in procedural generation is the famous perlin noise algorithm invented by Ken Perlin in 1983.
+            Since then, members of the open source creative coding community have developed their own noise functions.
         </p><br>
         <img src="/images/articles/procedural-planets/sin_wave_noise.jpg" alt="sin wave noise" width="400px">
         <p class="image-credit">[Indigo Quilez July 2020]</p>
         <img src="/images/articles/procedural-planets/electric_noise.png" alt="electric noise" width="400px">
         <p class="image-credit">[https://www.shadertoy.com/view/ldlXRS]</p>
-        <p class="margined-text">Even though these images look like beautiful works of art, they are still just functions of math that take a 2D coordinate as input and return a single "noise" value as output. Some of them also take an additional input, time, to animate the noise indefinitely. There is debate about whether or not these functions are two or three dimensional, which is why in this work I wanted to build ontop of these open source noise functions and add complexity ontop of them to make something that can be called a planet. A lot of this work has been inspired by Sebastian Lague and his video on <a href="https://www.youtube.com/watch?v=lctXaT9pxA0">procedural moon and planet generation.</a> The stategy I will be using to generate the planet procedurally will be instead of generating the actual geometry, I will simply be using a function that takes in a 3D point on a sphere and return a radius or essentially the "height" at that point. Because this is a noise function, points that lie close to each other on the sphere's surface will have similar values.</p>
+        <p class="margined-text">Even though these images look like beautiful works of art, they are still just
+            functions of math that take a 2D coordinate as input and return a single "noise" value as output. Some of
+            them also take an additional input, time, to animate the noise indefinitely. There is debate about whether
+            or not these functions are two or three dimensional, which is why in this work I wanted to build ontop of
+            these open source noise functions and add complexity ontop of them to make something that can be called a
+            planet. A lot of this work has been inspired by Sebastian Lague and his video on <a
+                href="https://www.youtube.com/watch?v=lctXaT9pxA0">procedural moon and planet generation.</a> The
+            stategy I will be using to generate the planet procedurally will be instead of generating the actual
+            geometry, I will simply be using a function that takes in a 3D point on a sphere and return a radius or
+            essentially the "height" at that point. Because this is a noise function, points that lie close to each
+            other on the sphere's surface will have similar values.</p>
         <h2>Sphere Generation</h2><br>
         <p>
-            Now that we have established the strategy for the procedurally generated planets, the first problem we need to tackle is the generation of the sphere. As you may know, modern rasterizing technology expects objects to be broken down into triangles. This poses a problem for us because a sphere is not made of flat surfaces, in fact we know that a sphere has no corners nor edges... However, there is still hope! We can approximate a sphere by making one out of many tiny triangles, similar to the way curved lines are drawn on your screen. If only we could find a 3D shape that roughly resembles a sphere, we could potentially keep subdividing the surfaces of this object and normalize all the vertices around its origin to end up with something that roughly resembles a sphere. What object could that be?
+            Now that we have established the strategy for the procedurally generated planets, the first problem we need
+            to tackle is the generation of the sphere. As you may know, modern rasterizing technology expects objects to
+            be broken down into triangles. This poses a problem for us because a sphere is not made of flat surfaces, in
+            fact we know that a sphere has no corners nor edges... However, there is still hope! We can approximate a
+            sphere by making one out of many tiny triangles, similar to the way curved lines are drawn on your screen.
+            If only we could find a 3D shape that roughly resembles a sphere, we could potentially keep subdividing the
+            surfaces of this object and normalize all the vertices around its origin to end up with something that
+            roughly resembles a sphere. What object could that be?
         </p><br>
         <img src="/images/articles/procedural-planets/cube.PNG" alt="red unity cube" width="450px">
-        <p>A cube of course! All we have to do now is subdivide the faces of this cube into thousands of tiny triangles and normalize each vertex around the origin to get a sphere. Easy right?</p>
-        <img src="/images/articles/procedural-planets/subdivided_cube.PNG" alt="subdivided image of a cube" width="450px">
-        <p>Great, we have a subdivided cube, but we still need to normalize each vertex of this mesh to turn it into a sphere.</p>
+        <p>A cube of course! All we have to do now is subdivide the faces of this cube into thousands of tiny triangles
+            and normalize each vertex around the origin to get a sphere. Easy right?</p>
+        <img src="/images/articles/procedural-planets/subdivided_cube.PNG" alt="subdivided image of a cube"
+            width="450px">
+        <p>Great, we have a subdivided cube, but we still need to normalize each vertex of this mesh to turn it into a
+            sphere.</p>
         <img src="/images/articles/procedural-planets/cube_sphere.PNG" alt="cube sphere" width="450px">
-        <p>Look at that! We have a sphere! It appears our method of normalizing the vertices of a mesh to obtain a sphere has indeed worked. However there is still one problem though, we can observe that where the corners of the cube were, there is an inconsistensy in the connections of the vertices. The pattern doesnt match because projecting a 3d corner onto a 2d plane results in undesirable distortions. This problem is not apparent right now, but you can imagine how if we are going to change the heights of these points, we would like the sphere to look consistent everywhere.</p>
-        <img src="/images/articles/procedural-planets/corner_artifacts.PNG" alt="" width="250px">
+        <p>Look at that! We have a sphere! It appears our method of normalizing the vertices of a mesh to obtain a
+            sphere has indeed worked. However there is still one problem though, we can observe that where the corners
+            of the cube were, there is an inconsistensy in the connections of the vertices. The pattern doesnt match
+            because projecting a 3d corner onto a 2d plane results in undesirable distortions. This problem is not
+            apparent right now, but you can imagine how if we are going to change the heights of these points, we would
+            like the sphere to look consistent everywhere.</p>
+        <img src="/images/articles/procedural-planets/corner_artifacts.PNG" alt="artifact at corner of cube sphere" width="250px">
         <p>
             Okay, using a cube is a good start, but we get weird shaped artifacts from it, lets keep thinking!
             <br>
             <br>
             The first objects that may come to mind are the five regular polyhedra.
         </p>
-        <img src="/images/articles/procedural-planets/platonske_polyedreeng.svg" alt="">
-        <p>
-            Note that none of these shapes are spherical, but we can use them to approximate a sphere by recursively subdividing their individual faces and normalizing the resulting vertices. This means all the vertices in the shape will have a length of 1 or 1 unit away from the center. An algorithm which subdivides a mesh to add more detail into geometry is called a subdivision surface algorithm. There are many kinds of subdivision surface algorithms, each with their pros and cons, however the one I use is fairly naive and simply consists of splitting each triangle down into 4 smaller triangles by inserting a vertex at the midpoint of each edge. You can imagine how this algorithm will increase the number of vertices in the mesh exponentially. Starting with a mesh of 8 triangles, after only 7 subdivisions, we end up with 393,216 vertices!
+        <img src="/images/articles/procedural-planets/platonske_polyedreeng.svg" alt="" width="600px">
+        <p class="note">
+            Note that none of these shapes are spherical, but we can use them to approximate a sphere by recursively
+            subdividing their individual faces and normalizing the resulting vertices.
         </p>
-        
+        <p>
+            This means all the vertices in
+            the shape will have a length of 1 or 1 unit away from the center. An algorithm which subdivides a mesh to
+            add more detail into geometry is called a subdivision surface algorithm. There are many kinds of subdivision
+            surface algorithms, each with their pros and cons, however the one I use is fairly naive and simply consists
+            of splitting each triangle down into 4 smaller triangles by inserting a vertex at the midpoint of each edge.
+            You can imagine how this algorithm will increase the number of vertices in the mesh exponentially. Starting
+            with a mesh of 8 triangles, after only 7 subdivisions, we end up with 393,216 vertices!
+        </p>
+        <pre><code class="language-javascript">function sayHello() {
+    console.log('Hello, world!');
+}
+</code></pre>
     </section>
 </body>
+<script src="/prism/prism.js"></script>
 </html>
