@@ -10,6 +10,7 @@ h2 {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	color: #edf0f1;
+    margin-top: 30px;
 }
 
 .main-section {
@@ -32,4 +33,22 @@ h2 {
 
 .main-title {
     text-align: center;
+}
+
+img {
+    border-radius: 3px;
+    border: 3px solid rgb(177, 177, 177);
+    margin-top: 20px;
+}
+
+.image-credit {
+    font-size: 12px;
+}
+
+a {
+    color: lightskyblue;
+}
+
+.margined-text {
+    margin-top: 20px;
 }
