@@ -1,53 +1,248 @@
+/* -------- Base Reset -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-	height: 100vh;
+    position: relative;
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------- Navbar -------- */
+.navbar {
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #c9d1d9;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navlinks a:hover {
+    color: #58a6ff;
+}
+
+/* -------- Home Page -------- */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
 }
 
 .banner {
-	display: flex;
-	align-items: center;
-	margin-bottom: 50px;
-	margin-top: 50px;
+    max-width: 800px;
+    text-align: center;
 }
 
 .banner img {
-	width: 30%;
-	border-radius: 50%;
-	border: 5px solid white;
-	box-shadow: 0px 0px 20px black;
-	margin: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #30363d;
 }
 
-.main {
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+.banner h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: #f0f6fc;
 }
 
-.main p {
-	background-color: #14151A;
-	padding: 20px;
-	border-radius: 20px;
-	border: 3px solid #edf0f1;
-	box-shadow: 0px 0px 20px black;
+.banner h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #8b949e;
+    margin-bottom: 1.5rem;
 }
 
 .banner p {
-	background-color: #14151A;
-	padding: 40px;
-	border-radius: 50px;
-	border: 4px solid #edf0f1;
-	box-shadow: 0px 0px 20px black;
+    color: #c9d1d9;
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-footer p {
-	background-color: #14151A;
-	padding: 20px;
-	border-radius: 20px;
-	border: 3px solid #edf0f1;
-	box-shadow: 0px 0px 20px black;
-	width: 20%;
-	margin-left: auto;
-	margin-right: auto;
-	line-height: 2.0em;
+.title {
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.sub-heading {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    color: gray
+}
+
+/* -------- Project Listing -------- */
+.project-listing {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 3rem 1rem 5rem;
+    min-height: 1000px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.project-pane {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    transition: height 0.5s ease;
+}
+
+.project-pane img {
+    transition: height 0.5s ease;
+}
+
+.project-pane:hover {
+    border-color: #58a6ff;
+    cursor: pointer;
+}
+
+.project-pane:hover img {
+    height: 280px;
+    aspect-ratio: 1;
+}
+
+.project-pane img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.project-description {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    color: #f0f6fc;
+    margin-bottom: 0.75rem;
+}
+
+.project-description p {
+    margin-bottom: 1rem;
+    color: #c9d1d9;
+}
+
+.github-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.github-button:hover {
+    background: #238636;
+    color: #fff;
+    border-color: #2ea043;
+}
+
+/* -------- Experience -------- */
+.experience {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.experience-entry {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+}
+
+.experience-entry h2 {
+    color: #f0f6fc;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-entry h3 {
+    color: #8b949e;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.experience-entry p {
+    color: #c9d1d9;
+}
+
+/* -------- Footer -------- */
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #161b22;
+    border-top: 1px solid #30363d;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 700px) {
+    .project-pane img {
+        height: 180px;
+    }
+
+    .banner img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-description {
+        padding: 1rem;
+    }
 }
