@@ -18,10 +18,65 @@
     </nav>
 
     <h1 class="title">Projects</h1>
-    <p class="sub-heading">A collection of my projects showcasing my work in machine learning and computer graphics. </p>
+    <p class="sub-heading">A collection of my projects showcasing my work in machine learning and computer graphics.
+    </p>
 
     <section class="project-listing">
-        <div class="project-pane" style="height:370px;" onmouseover="this.style.height='660px';" onmouseout="this.style.height='370px';">
+        <div class="project-pane">
+            <img src="../images/projects/lolytics.png" alt="LoLytics" />
+            <div class="project-description">
+                <h1 class="project-title">LoLytics</h1>
+                <p>
+                    A league of legends website that uses AI and machine learning to help the review process by
+                    quantifying game losing mistakes throughout the course of a game.
+                </p>
+                <p><em>PyTorch, React, Vite, Seaborn</em></p>
+                <a class="github-button" href="https://github.com/fqhd/LoLytics" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/drast.png" alt="Eiffel Tower drawn with circles" />
+            <div class="project-description">
+                <h1 class="project-title">Drast</h1>
+                <p>
+                    A tool that can rasterize vector graphics onto a 2D canvas in a way that preserves differentiability
+                    and allows gradient computation.
+                </p>
+                <p><em>Rust</em></p>
+                <a class="github-button" href="https://github.com/fqhd/drast" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/color_classifier.png" alt="ColorClassifier" />
+            <div class="project-description">
+                <h1 class="project-title">ColorClassifier</h1>
+                <p>
+                    A neural network that classifies colors based on human perception, trained on real user data
+                    collected from an online giveaway.
+                </p>
+                <p><em>JavaScript, TensorFlow</em></p>
+                <a class="github-button" href="https://github.com/fqhd/ColorClassifier" target="_blank">View on
+                    GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/flowers.jpg" alt="SRGAN" />
+            <div class="project-description">
+                <h1 class="project-title">Super Resolution GAN</h1>
+                <p>
+                    Implementation and improvement of Nvidia's SRGAN architecture for image upscaling. Focuses on
+                    perceptual
+                    loss and generative consistency for sharper, more realistic results.
+                </p>
+                <p><em>Python, PyTorch</em></p>
+                <a class="github-button" href="https://github.com/fqhd/SRGAN" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
             <img src="../images/projects/planets.jpg" alt="Procedural Planets" />
             <div class="project-description">
                 <h1 class="project-title">Procedural Planets</h1>
@@ -36,26 +91,94 @@
             </div>
         </div>
 
-        <div class="project-pane" style="height:345px;" onmouseover="this.style.height='630px';" onmouseout="this.style.height='345px';">
-            <img src="../images/projects/flowers.jpg" alt="SRGAN" />
+        <div class="project-pane">
+            <img src="../images/projects/denoise.jpg" alt="Denoiser" />
             <div class="project-description">
-                <h1 class="project-title">Super Resolution GAN</h1>
+                <h1 class="project-title">AI Denoise</h1>
                 <p>
-                    Implementation and improvement of Nvidia's SRGAN architecture for image upscaling. Focuses on
-                    perceptual
-                    loss and generative consistency for sharper, more realistic results.
+                    In this project, I try several techniques to train a UNet to remove noise from images that have been
+                    generated using a raytracing pipeline with number of samples per pixel.
                 </p>
-                <p><em>Python, PyTorch</em></p>
-                <a class="github-button" href="https://github.com/fqhd/SRGAN" target="_blank">View on GitHub</a>
+                <p><em>C++, OpenGL, PyTorch</em></p>
+                <a class="github-button" href="https://github.com/fqhd/Denoiser" target="_blank">View on GitHub</a>
             </div>
         </div>
 
-        <div class="project-pane" style="height:320px;" onmouseover="this.style.height='605px';" onmouseout="this.style.height='320px';">
+        <div class="project-pane">
+            <img src="../images/projects/meadow.jpg" alt="Meadow" />
+            <div class="project-description">
+                <h1 class="project-title">Meadow</h1>
+                <p>
+                    A desktop application to be used as a voxel editor to construct 3D works of art using arbitrarily
+                    colored blocks. The original intent behind this project was for it to be used alongside a generative
+                    adversarial network to experiment with 3 dimensional output.
+                </p>
+                <p><em>C++, OpenGL, GLM, GLFW</em></p>
+                <a class="github-button" href="https://github.com/fqhd/Meadow" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/thetowers.jpg" alt="TheTowers" />
+            <div class="project-description">
+                <h1 class="project-title">TheTowers</h1>
+                <p>
+                    Open source multiplayer minecraft-like team-based game much like capture the flag. Incorporates many
+                    of the mechanics present in minecraft such as block placing/breaking, crafting, climbing etc but
+                    also adds more such as shooting and sliding.
+                </p>
+                <p><em>C++, OpenGL, GLM, SFML, STB</em></p>
+                <a class="github-button" href="https://github.com/fqhd/TheTowers" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+
+
+        <div class="project-pane">
+            <img src="../images/projects/melon.png" alt="Melon" />
+            <div class="project-description">
+                <h1 class="project-title">Melon</h1>
+                <p>
+                    A fast, simple, and flexible C++ library that combines the idea of genetic algorithms with neural
+                    networks while supporting many common selection, mutation and crossover mechanisms.
+                </p>
+                <p><em>C++</em></p>
+                <a class="github-button" href="https://github.com/fqhd/Melon" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/neurobird.png" alt="Flappy Bird" />
+            <div class="project-description">
+                <h1 class="project-title">NeuroBird</h1>
+                <p>
+                    Using Neuro-evolution to teach artificial neural networks how to play flappy bird.
+                </p>
+                <p><em>Javascript, TensorFlow</em></p>
+                <a class="github-button" href="https://github.com/fqhd/NeuroBird" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/stroke_painting.png"
+                alt="Side by side image comparison of stroke based inpainting" />
+            <div class="project-description">
+                <h1 class="project-title">In-Painting</h1>
+                <p>
+                    A generative adversarial network that learns to regenerate arbitrarily masked sections of an image.
+                </p>
+                <p><em>Rust</em></p>
+                <a class="github-button" href="https://github.com/fqhd/inpainting" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-pane">
             <img src="../images/projects/chess.jpg" alt="WebChess" />
             <div class="project-description">
                 <h1 class="project-title">WebChess</h1>
                 <p>
-                    Web platform for improving chess skills through puzzles, endgames, and opening practice. Integrates
+                    Web platform for improving chess skills through puzzles, endgames, and opening practice.
+                    Integrates
                     a
                     Stockfish backend for analysis and interactive training.
                 </p>
@@ -63,6 +186,22 @@
                 <a class="github-button" href="https://github.com/fqhd/WebChess" target="_blank">View on GitHub</a>
             </div>
         </div>
+
+        <div class="project-pane">
+            <img src="../images/projects/deepdream.jpg" alt="Small-AI-Projects" />
+            <div class="project-description">
+                <h1 class="project-title">Small AI Projects</h1>
+                <p>
+                    Developed a collection of AI projects as part of a machine learning bootcamp, including an image
+                    colorization GAN, DeepDream in PyTorch, text generation with GRUs, sentiment analysis with LSTMs,
+                    transfer learning using pre-trained CNNs, and language translation with seq2seq models.
+                </p>
+                <p><em>Python, PyTorch, Pandas, HuggingFace</em></p>
+                <a class="github-button" href="https://github.com/fqhd/small-ai-projects" target="_blank">View on
+                    GitHub</a>
+            </div>
+        </div>
+
     </section>
 
     <footer>
