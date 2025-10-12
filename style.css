@@ -116,6 +116,27 @@ body {
     margin: 0 auto;
 }
 
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.project-banner {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+}
+
+.paragraph {
+    width: 40%;
+    margin: 50px auto;
+    color: #ccc;
+    text-align: center;
+    font-size: 18px;
+}
+
 .project-pane {
     width: 300px;
     display: flex;
@@ -134,7 +155,6 @@ body {
 
 .project-pane:hover {
     border-color: #58a6ff;
-    cursor: pointer;
 }
 
 .project-pane img {
