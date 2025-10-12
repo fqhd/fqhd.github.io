@@ -129,12 +129,29 @@ a {
     border-radius: 12px;
 }
 
+.project-image {
+    width: 35%;
+    margin: 0 auto;
+    border: 1px solid #30363d;
+    border-radius: 1px;
+}
+
 .paragraph {
-    width: 40%;
+    width: 35%;
     margin: 50px auto;
     color: #ccc;
-    text-align: center;
     font-size: 18px;
+}
+
+.reference {
+    font-style: italic;
+    color: #555;
+    text-decoration: none;
+    text-align: center;
+}
+
+.text-reference {
+    color: rgb(46, 214, 226);
 }
 
 .project-pane {
