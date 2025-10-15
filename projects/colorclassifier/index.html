@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorClassifier</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navlinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/experience/">Experience</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="title">Color Classifier</h1>
+
+    <p class="sub-heading">Crowd sourcing data on human color perception to teach a neural network colors</p>
+
+    <img class="project-banner" src="/images/banners/color_classifier_banner.png">
+    <p class="paragraph">In this project, I wanted to get hands on experience training a neural network on user data first hand. For this reason, I took it upon myself to host a large event in front of a big discord community by sending out a large survey for a chance to win a prize. Users were given a random color and were asked to classify it into 8 distinct classes: orange-ish, blue-ish, green-ish, purple-ish, red-ish, brown-ish, yellow-ish, and pink-ish. Users were also made aware that the more entries they submitted, the higher their chance to win the prize. This of course would invite users to submit garbage entries just to increase their chances, valuing quantity over quality, however, this poses a nice challenge and a perfect opportunity to practice methods for data cleaning.</p>
+    <p class="paragraph">After a week, the giveaway was closed and I began manually inspecting the data. The first thing I did was separate the entries by user ID, this would allow me to quickly flag any users that would spam garbage submissions and instantly disqualify them from the giveaway and delete their entries from the training data. Interestingly, only 5 contestants were removed, one of which actually had the highest number of entries, but since they were garbage entries, they've been disqualified. The user with the most valid entries was selected and awarded their prize. I ketp scanning through the data and although some users had few questionable entries I decided to keep them in the training set as a little bad data could actually help training.</p>
+    <p class="paragraph">Finally, I trained the neural network using tensorflowjs and uploaded the model architecture and weights to the live github demo(color_classifier_model.json and color_classifier_model.weights.bin). I also wrote a simple HTML website and loaded in the model with javascript. I created some HTML elements to allow the user to select a color and a prediction was automatically made and displayed to the user based on the chosen color parameters(r, g, b).</p>
+    
+    <footer>
+        <p>© 2025 Fahd Baba</p>
+    </footer>
+</body>
+
+</html>
