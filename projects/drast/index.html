@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drast</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navlinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/experience/">Experience</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="title">Drast</h1>
+
+    <p class="sub-heading">Rasterizing circles on a canvas in a way that preserves differentiability</p>
+
+    <img class="project-banner" src="/images/banners/drast_banner.jpg">
+    <p class="paragraph">This project was inspired by the work of <a class="text-reference" href="https://cseweb.ucsd.edu/~tzli/">Tzu-Mao Li</a> at <a class="text-reference" href="https://www.mit.edu/">MIT</a> on differentiable vector graphics. I read their papar about how they were able to rasterize bezier curves using an iterative solver to preserve differentiability. However, drawing these complex shapes can make it quite computationally expensive as no direct formula exists to solve high order polynomials. For this reason, I have simplified the problem to simply rasterizing circles, this reduces the number of parameters per shape and allows for a much faster backward pass for gradient computation.</p>
+    <p class="paragraph">It is actually possible to rasterize quadratic bezier curves differentiably in a fairly quick and efficient manner. The approach I took was to try and calculate the distance from any pixel (x, y) to the closest point on the bezier curve. This would allow me to compute the distance from the pixel to the closest point on the curve and if that distance falls under some threshold, we can determine whether to shade that pixel in or not using some differentiable function such as smoothmin or sigmoid. The issue with this approach however is that it is fairly difficult to compute the derivative of the cubic function. In order to find the closest point on the curve to the current pixel, the distance formula adds a degree to the polynomial to which we have to find the roots. This turns the quadratic equation into a cubic. Although there is a solution to the cubic equation, it is defined in a piece-wise manner and is not differentiable everywhere.</p>
+    <img class="project-image" src="/images/banners/drast_curve.png">
+    <p class="paragraph">For this reason, rasterizing quadratic bezier curves is still a work in progress. However, the equation for circle rasterizataion are significantly more stable and continuous everywhere which makes computing their derivative a relatively straightforward process. </p>
+    
+    <footer>
+        <p>© 2025 Fahd Baba</p>
+    </footer>
+</body>
+
+</html>
